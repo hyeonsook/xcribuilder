@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog 
+xmlns="http://xcri.org/profiles/1.2/catalog" 
+xmlns:xcriTerms="http://xcri.org/profiles/1.2/catalog/terms"
+xmlns:credit="http://purl.org/net/cm" 
+xmlns:dcterms="http://purl.org/dc/terms/" 
+xmlns:mlo="http://purl.org/net/mlo" 
+xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog http://www.xcri.co.uk/bindings/xcri_cap_1_2.xsd http://xcri.org/profiles/1.2/catalog/terms http://www.xcri.co.uk/bindings/xcri_cap_terms_1_2.xsd" 
+generated="2011-03-24T09:32:50.827Z">
+	<provider>
+		<dcterms:identifier>http://www.open.ac.uk/</dcterms:identifier>
+		<dcterms:title>The Open University</dcterms:title>
+		<mlo:url>http://www.open.ac.uk/</mlo:url>
+		<course>
+			<dcterms:identifier>http://data.open.ac.uk/course/a174</dcterms:identifier>
+			<dcterms:subject identifier="KC.3">KC.3</dcterms:subject>
+			<dcterms:subject>Literature and Creative Writing</dcterms:subject>
+			<dcterms:title>Start writing fiction</dcterms:title>
+			<mlo:url>http://www3.open.ac.uk/study/undergraduate/course/a174.htm</mlo:url>
+			<abstract>If you've ever considered writing a novel or short stories, this practical introduction to writing fiction will get you started, firing your creativity and imagination.</abstract>
+			<mlo:assessment><xhtml:div>
+<xhtml:p>You can choose whether to submit your tutor-marked assignments (TMAs) on paper or online through the eTMA system. You may want to use the eTMA system for some of your assignments but submit on paper for others. This is entirely your choice.</xhtml:p>
+<xhtml:p>The second TMA builds on the skills developed in the first one.</xhtml:p>
+</xhtml:div>
+</mlo:assessment>
+			<mlo:objective>Have you ever thought of writing short stories or trying your hand at a novel? This 12-week online course provides a practical introduction to writing fiction - firing your creativity and imagination as well as equipping you with basic narrative strategies. During the course you will write two short pieces, for which your tutor will provide detailed individual feedback. You will also have the opportunity to work with your tutor, along with other students, in an online environment. You will read and learn from the works of writers as well as listening to their advice on beginning to write fiction.</mlo:objective>
+			<mlo:prerequisite>There are no entry requirements but as this is an online course you should feel comfortable using a computer and accessing the internet. If you have any doubt about the suitability of the course, please contact our Student Registration &amp; Enquiry Service.</mlo:prerequisite>
+			<mlo:qualification>
+				<dcterms:title>May lead to a variety of qualifications</dcterms:title>
+				<dcterms:type>NLD Qual Code: M</dcterms:type>
+				<awardedBy>The Open University</awardedBy>
+			</mlo:qualification>
+			<mlo:credit>
+				<credit:scheme>The Open University</credit:scheme>
+				<credit:level>1</credit:level>
+				<credit:value>10</credit:value>
+			</mlo:credit>
+			<mlo:credit>
+				<credit:scheme>SCQF</credit:scheme>
+				<credit:level>7</credit:level>
+				<credit:value>10</credit:value>
+			</mlo:credit>
+			<presentation>
+				<dcterms:description>Year of entry: 2011</dcterms:description>
+				<dcterms:identifier>A1742011E</dcterms:identifier>
+				<mlo:start>2011-05-07</mlo:start>
+				<end>2011-08-31</end>
+				<mlo:duration>4 months (approx); NLD Duration Code: F</mlo:duration>
+				<applyFrom>2010-09-05</applyFrom>
+				<applyUntil>2011-04-08</applyUntil>
+				<applyTo>http://www.open.ac.uk/study/</applyTo>
+				<studyMode>NLD Study Mode Code: C</studyMode>
+				<attendanceMode>Self-study</attendanceMode>
+				<attendancePattern>Part time distance education course</attendancePattern>
+				<mlo:languageOfInstruction>EN</mlo:languageOfInstruction>
+				<mlo:cost>UK fee: GBP155.00; Ireland fee: GBP340.00; Continental Europe fee: GBP385.00</mlo:cost>
+			</presentation>
+			<presentation>
+				<dcterms:description>Year of entry: 2011</dcterms:description>
+				<dcterms:identifier>A1742011J</dcterms:identifier>
+				<mlo:start>2011-10-29</mlo:start>
+				<end>2012-02-28</end>
+				<mlo:duration>4 months (approx); NLD Duration Code: F</mlo:duration>
+				<applyFrom>2011-03-05</applyFrom>
+				<applyUntil>2011-09-30</applyUntil>
+				<applyTo>http://www.open.ac.uk/study/</applyTo>
+				<studyMode>NLD Study Mode Code: C</studyMode>
+				<attendanceMode>Self-study</attendanceMode>
+				<attendancePattern>Part time distance education course</attendancePattern>
+				<mlo:languageOfInstruction>EN</mlo:languageOfInstruction>
+				<mlo:cost>UK fee: GBP170.00; Ireland fee: GBP360.00; Continental Europe fee: GBP405.00</mlo:cost>
+			</presentation>
+			<presentation>
+				<dcterms:description>Year of entry: 2012</dcterms:description>
+				<dcterms:identifier>A1742012B</dcterms:identifier>
+				<mlo:start>2012-02-04</mlo:start>
+				<end>2012-05-31</end>
+				<mlo:duration>4 months (approx); NLD Duration Code: F</mlo:duration>
+				<applyFrom>2011-03-19</applyFrom>
+				<applyUntil>2012-01-06</applyUntil>
+				<applyTo>http://www.open.ac.uk/study/</applyTo>
+				<studyMode>NLD Study Mode Code: C</studyMode>
+				<attendanceMode>Self-study</attendanceMode>
+				<attendancePattern>Part time distance education course</attendancePattern>
+				<mlo:languageOfInstruction>EN</mlo:languageOfInstruction>
+				<mlo:cost>UK fee: GBP170.00; Ireland fee: GBP360.00; Continental Europe fee: GBP405.00</mlo:cost>
+			</presentation>
+		</course>
+		<course>
+			<dcterms:description>NLD Target Group Code: G</dcterms:description>
+			<dcterms:description>B01, BA (Honours) History, Undergraduate qualification, Open University</dcterms:description>
+			<dcterms:description>Explore a diversity of people, places and periods, including the impacts of empires on world history, twentieth-century dictators, history of medicine, and global heritage.</dcterms:description>
+			<dcterms:description>If you study this degree course you will develop and deepen your knowledge of a wide range of topics and periods in history, from antiquity to the late twentieth century. To help you achieve the required 360 credits, we recommend a number of alternative routes with different combinations of modules, each route identified with particular historical interests. You will undertake your study within a broad framework designed to meet high national standards for single-subject history degrees. You will develop a range of skills in knowledge management, oral and written communication, and information and communications technologies, all of which will be valued in the modern workplace.</dcterms:description>
+			<dcterms:description>Many of these skills you'll gain through the study of this degree course will translate very smoothly into the modern workplace, which is increasingly concerned with effective knowledge management and communication technology. Employers in all fields put a very high value on anyone who can deal competently with a large amount of complex information and turn it to good use, so history graduates are sought after. The ability to select and analyse relevant data and to present conclusions concisely and logically is essential in most lines of work, as is the ability to communicate clearly both orally and in writing. Critical and creative thinking and the capacity for independent research develop initiative, another valuable asset in today's competitive environment. Ask our Student Registration &amp; Enquiry Service for the careers publication OU study and your career if you want to find out more about the process of career development and about sources of careers information and guidance. For planning your next career steps, visit the OU Careers Advisory Service website. There's more information about the career relevance of degrees on the UK graduate careers website Prospects.</dcterms:description>
+			<dcterms:identifier>B01</dcterms:identifier>
+			<dcterms:identifier>NLD: 3900010611</dcterms:identifier>
+			<dcterms:subject>LDCS1: DB.</dcterms:subject>
+			<dcterms:subject>History</dcterms:subject>
+			<dcterms:title>BA (Honours) History</dcterms:title>
+			<mlo:url>http://www3.open.ac.uk/study/undergraduate/qualification/B01.htm</mlo:url>
+			<mlo:qualification>
+				<dcterms:title>BA (Honours) History</dcterms:title>
+				<dcterms:educationLevel>Undergraduate</dcterms:educationLevel>
+				<dcterms:type>NLD Qual Code: M</dcterms:type>
+				<awardedBy>The Open University</awardedBy>
+			</mlo:qualification>
+			<mlo:credit>
+				<credit:scheme>The Open University</credit:scheme>
+				<credit:level/>
+				<credit:value>360</credit:value>
+			</mlo:credit>
+			<presentation>
+				<dcterms:description>Year of entry: 1900</dcterms:description>
+				<dcterms:identifier>B01</dcterms:identifier>
+				<mlo:start>1900-01-01</mlo:start>
+				<mlo:duration>Variable; NLD Duration Code: J</mlo:duration>
+				<applyTo>http://www.open.ac.uk/study/</applyTo>
+				<studyMode>NLD Study Mode Code: C</studyMode>
+				<attendanceMode>Self-study</attendanceMode>
+				<attendancePattern>Part time distance education course</attendancePattern>
+				<mlo:languageOfInstruction>EN</mlo:languageOfInstruction>
+				<mlo:cost>Costs are paid per unit not per qualification.</mlo:cost>
+			</presentation>
+		</course>
+		<mlo:location>
+			<mlo:street>PO Box 197</mlo:street>
+			<mlo:town>Milton Keynes</mlo:town>
+			<mlo:postcode>MK7 6BJ</mlo:postcode>
+			<mlo:address>PO Box 197, Milton Keynes, MK7 6BJ</mlo:address>
+			<mlo:phone>0845 3006090</mlo:phone>
+			<mlo:fax>01908 653744</mlo:fax>
+			<mlo:email>http://www3.open.ac.uk/contact/contactus.aspx?cid=192</mlo:email>
+		</mlo:location>
+	</provider>
+</catalog>

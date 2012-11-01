@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 23, 2012 10:01:11 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="uk.ac.uwl.luci.hb.XcriCourse" table="xcri_course" catalog="dbo">
+        <id name="courseId" type="int">
+            <column name="CourseID" />
+            <generator class="assigned" />
+        </id>
+        <property name="clusterTitle" type="string">
+            <column name="ClusterTitle" length="200" />
+        </property>
+        <property name="studyLevel" type="string">
+            <column name="StudyLevel" length="200" />
+        </property>
+        <property name="adesc" type="string">
+            <column name="ADesc" length="200" />
+        </property>
+        <property name="abodyDesc" type="string">
+            <column name="ABodyDesc" length="200" />
+        </property>
+        <property name="awardType" type="string">
+            <column name="AwardType" length="200" />
+        </property>
+        <property name="awardTypeId" type="java.lang.Byte">
+            <column name="AwardTypeId" />
+        </property>
+        <property name="subjectId" type="java.lang.Integer">
+            <column name="SubjectID" />
+        </property>
+        <property name="subject2id" type="java.lang.Integer">
+            <column name="Subject2ID" />
+        </property>
+        <property name="subject3id" type="java.lang.Integer">
+            <column name="Subject3ID" />
+        </property>
+        <property name="introduction" type="string">
+            <column name="Introduction" length="1000" />
+        </property>
+        <property name="profAccredit" type="string">
+            <column name="profAccredit" length="100" />
+        </property>
+        <property name="exitSkills" type="string">
+            <column name="exitSkills" length="500" />
+        </property>
+        <property name="notableAspects" type="string">
+            <column name="NotableAspects" length="1000" />
+        </property>
+        <property name="specialResources" type="string">
+            <column name="SpecialResources" length="1000" />
+        </property>
+        <property name="teachingMethods" type="string">
+            <column name="TeachingMethods" length="1000" />
+        </property>
+        <property name="learningMaterials" type="string">
+            <column name="LearningMaterials" length="1000" />
+        </property>
+        <property name="careerProgression" type="string">
+            <column name="CareerProgression" length="1000" />
+        </property>
+        <property name="studyProgression" type="string">
+            <column name="StudyProgression" length="1000" />
+        </property>
+        <property name="workExperience" type="string">
+            <column name="WorkExperience" length="1000" />
+        </property>
+        <!--
+        <property name="departmentId" type="int">
+            <column name="DepartmentID" not-null="true" />
+        </property>-->
+        <property name="dname" type="string">
+            <column name="DName" length="200" />
+        </property>
+        <property name="similarCourses" type="string">
+            <column name="SimilarCourses" length="200" />
+        </property>
+        <property name="validation" type="string">
+            <column name="validation" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>
