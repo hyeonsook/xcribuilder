@@ -72,9 +72,12 @@ public class XCRIGenerator extends TimerTask
     {
         timer = new Timer();
         Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, (new StringBuilder()).append("Starting timer. The configured start date is 1/").append(month + 1).append("/").append(day).append(" (yyyy/mm/dd).").toString());
+        //runs at 7:05am on inputed date 
         calendar.set(calendar.get(1), month, day, 7, 5);
         firstDate = calendar.getTime();
-        period = 0x240c8400;
+        
+        //weekly run (ms): 1000(sec) * 60 (min) * 60 (hr) * 24 (day) * 7 (week) 
+        period = 1000 * 60 * 60 * 24 * 7;
         timer.scheduleAtFixedRate(this, firstDate, period);
     }
 
