@@ -155,20 +155,76 @@ public class XCRIGenerator extends TimerTask
     public static void main(String args[])
     {
         Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, "XcriGenerator started.");
-        String month;
-        String day;
-        if(args.length < 2)
+        if(args.length < 1)
         {
-            month = "10";
-            day = "09";
+            printHelp();
         } else
         {
-            month = args[0];
-            day = args[1];
+            String command = args[0];
+            if(args[0].equals("start") && args.length == 2 && isDate(args[1]))
+            {
+                String month = args[1].substring(0, 2);
+                String day = args[1].substring(3, 5);
+                XCRIGenerator xcriGenerator = getInstance(month, day);
+                xcriGenerator.start();
+                System.out.println((new StringBuilder()).append("The xcribuilder is going to start on ").append(args[1]).toString());
+                Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, (new StringBuilder()).append("The xcribuilder is going to start on ").append(args[1]).toString());
+            } else
+            if(args[0].equals("run"))
+            {
+                XCRIGenerator xcriGenerator = getInstance("1", "1");
+                xcriGenerator.runOnce();
+                System.out.println("The xcribuilder has been run.");
+                Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, "The xcribuilder has been run.");
+            } else
+            if(args[0].equals("stop"))
+            {
+                XCRIGenerator xcriGenerator = getInstance("1", "1");
+                XCRIGenerator _tmp = xcriGenerator;
+                stop();
+                System.out.println("The xcribuilder has been stopped.");
+                Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, "The xcribuilder has been stopped.");
+            } else
+            {
+                printHelp();
+            }
         }
-        XCRIGenerator xcriGenerator = new XCRIGenerator(month, day);
-        xcriGenerator.run();
     }
 
 
+    public static void printHelp()
+    {
+        System.out.println("Please enter right parameters. The usage of XcriBuilder is:");
+        System.out.println("----------------------------------------------------------");
+        System.out.println("XcriBuilder [command] [date]");
+        System.out.println("1. Start weekly update: XcriBuilder start mm/dd/yy");
+        System.out.println("   e.g. nohup java -jar XcriBuilder.jar start 01/01/12");
+        System.out.println("2. Run immediately once: XcriBuilder run");
+        System.out.println("   e.g. java -jar XcriBuilder.jar run");
+        System.out.println("3. Stop weekly update: XcriBuilder stop");
+        System.out.println("   e.g. java -jar XcriBuilder.jar stop");
+        System.out.println("----------------------------------------------------------");
+    }
+    
+    public static boolean isDate(String strDate)
+    {
+        if(strDate.length() == 8)
+        {
+            try
+            {
+                int month = (new Integer(strDate.substring(0, 2))).intValue();
+                int day = (new Integer(strDate.substring(3, 5))).intValue();
+            }
+            catch(Exception ex)
+            {
+                System.out.println("Wrong parameter!!");
+                printHelp();
+                return false;
+            }
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
 }
