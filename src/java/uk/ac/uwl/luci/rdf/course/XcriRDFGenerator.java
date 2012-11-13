@@ -8,6 +8,10 @@ package uk.ac.uwl.luci.rdf.course;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDF;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -156,8 +160,30 @@ public class XcriRDFGenerator extends RDFGenerator
     public static void main(String args[])
     {
         XcriRDFGenerator rdfGenerator = new XcriRDFGenerator();
-        rdfGenerator.filepath = "D:/My Documents/NetBeansProjects/XCRIBuilder/";
+        rdfGenerator.filepath = "D:/Workspace/XCRIBuilder/";
         RepositoryManager.update((new StringBuilder()).append(rdfGenerator.filepath).append("recent.rdf").toString(), "http://luci.uwl.ac.uk/course_linkeddata/recent");
+    }
+    
+    public void buildRdf(String folder, CatalogDocument cat){
+        FileOutputStream fout = null;
+        try {
+            setCatalog(cat);
+            File file = new File(folder+"recent.rdf");
+            fout = new FileOutputStream(file);
+            extractData().write(fout);
+System.out.println("wrote in rdf");            
+            RepositoryManager.update(folder + "recent.rdf", "http://luci.uwl.ac.uk/course_linkeddata/recent");
+        
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(XcriRDFGenerator.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fout.close();
+            } catch (IOException ex) {
+                Logger.getLogger(XcriRDFGenerator.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+ 
     }
 
     private CatalogDocument cat;

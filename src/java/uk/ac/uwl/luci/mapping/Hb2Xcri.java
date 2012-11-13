@@ -889,7 +889,7 @@ public class Hb2Xcri {
                 tmpCode.trim();
                 if(tmpCode.indexOf("-") != -1)
                     tmpCode = tmpCode.substring(0, tmpCode.indexOf("-"));
-                days = (new Integer(tmpCode)).intValue() * 365;
+                days = (new Integer(tmpCode.trim())).intValue() * 365;
             }
             endIndex = durationWeeks.indexOf("month");
             if(endIndex != -1)

@@ -12,6 +12,7 @@ import java.util.*;
 import java.util.logging.*;
 import org.apache.xmlbeans.XmlOptions;
 import org.xcri.profiles.x12.catalog.CatalogDocument;
+import uk.ac.uwl.luci.rdf.course.XcriRDFGenerator;
 
 // Referenced classes of package uk.ac.uwl.luci.mapping:
 //            Hb2Xcri
@@ -84,7 +85,6 @@ public class XCRIGenerator extends TimerTask
     public void runOnce()
     {
         run();
-        XCRIGenerator _tmp = this;
         
     }
 
@@ -143,6 +143,16 @@ public class XCRIGenerator extends TimerTask
                 Logger.getLogger(XCRIGenerator.class.getName()).log(Level.SEVERE, "Course size is zero. No xri xml was updated.");
             }
             
+            //RDF data generation
+            
+            Properties prop = new Properties();
+            prop.load(getClass().getResourceAsStream("uwl_xcri.properties"));
+System.out.println("start.."+prop.getProperty("rdf.generate") );                
+            if(prop.getProperty("rdf.generate").equals("true")){
+System.out.println("start..");                
+                new XcriRDFGenerator().buildRdf(prop.getProperty("system.target.location"),cat);
+            }
+            
             
         } catch (IOException ex) {
             Logger.getLogger(XCRIGenerator.class.getName()).log(Level.SEVERE, null, ex);
@@ -155,13 +165,15 @@ public class XCRIGenerator extends TimerTask
     public static void main(String args[])
     {
         Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, "XcriGenerator started.");
-        if(args.length < 1)
+        if(args.length < 0)
         {
             printHelp();
         } else
         {
-            String command = args[0];
-            if(args[0].equals("start") && args.length == 2 && isDate(args[1]))
+            //String command = args[0];
+            String command = "run";
+            
+            if(command.equals("start") && args.length == 2 && isDate(args[1]))
             {
                 String month = args[1].substring(0, 2);
                 String day = args[1].substring(3, 5);
@@ -170,18 +182,17 @@ public class XCRIGenerator extends TimerTask
                 System.out.println((new StringBuilder()).append("The xcribuilder is going to start on ").append(args[1]).toString());
                 Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, (new StringBuilder()).append("The xcribuilder is going to start on ").append(args[1]).toString());
             } else
-            if(args[0].equals("run"))
+            if(command.equals("run"))
             {
                 XCRIGenerator xcriGenerator = getInstance("1", "1");
                 xcriGenerator.runOnce();
                 System.out.println("The xcribuilder has been run.");
-                Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, "The xcribuilder has been run.");
+                //Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, "The xcribuilder has been run.");
             } else
-            if(args[0].equals("stop"))
+            if(command.equals("stop"))
             {
                 XCRIGenerator xcriGenerator = getInstance("1", "1");
-                XCRIGenerator _tmp = xcriGenerator;
-                stop();
+                xcriGenerator.stop();
                 System.out.println("The xcribuilder has been stopped.");
                 Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, null, "The xcribuilder has been stopped.");
             } else

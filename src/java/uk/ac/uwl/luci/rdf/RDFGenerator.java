@@ -14,7 +14,6 @@ public abstract class RDFGenerator
     public RDFGenerator()
     {
         filepath = "/Users/hyeokim/";
-        rootModel = null;
         rootModel = ModelFactory.createDefaultModel();
     }
 
