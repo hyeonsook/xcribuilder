@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2012 6:53:15 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="uk.ac.uwl.luci.hb.Subjects" table="subjects" catalog="dbo">
+        <id name="subjectId" type="int">
+            <column name="SubjectID" />
+            <generator class="assigned" />
+        </id>
+        <property name="rsubjectId" type="java.lang.Integer">
+            <column name="RSubjectID" />
+        </property>
+        <property name="essubjectId" type="java.lang.Integer">
+            <column name="ESSubjectId" />
+        </property>
+        <property name="subject" type="string">
+            <column name="Subject" length="100" />
+        </property>
+        <property name="showInMain" type="java.lang.Boolean">
+            <column name="ShowInMain" />
+        </property>
+        <property name="showInFhhs" type="java.lang.Boolean">
+            <column name="ShowInFHHS" />
+        </property>
+        <property name="showInTrusts" type="java.lang.Boolean">
+            <column name="ShowInTrusts" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+        <property name="relatedSubjectId" type="java.lang.Integer">
+            <column name="RelatedSubjectId" />
+        </property>
+    </class>
+</hibernate-mapping>

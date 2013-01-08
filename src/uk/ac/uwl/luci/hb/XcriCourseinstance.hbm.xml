@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 23, 2012 10:01:11 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="uk.ac.uwl.luci.hb.XcriCourseinstance" table="xcri_courseinstance" catalog="dbo">
+        <id name="courseInstanceId" type="int">
+            <column name="CourseInstanceID" />
+            <generator class="assigned" />
+        </id>
+        <property name="courseId" type="java.lang.Integer">
+            <column name="CourseID" />
+        </property>
+        <property name="courseTitle" type="string">
+            <column name="CourseTitle" length="200" />
+        </property>
+        <property name="courseCode" type="string">
+            <column name="CourseCode" length="20" />
+        </property>
+        <property name="locationId" type="java.lang.Integer">
+            <column name="LocationID" />
+        </property>
+        <property name="studyModeDesc" type="string">
+            <column name="StudyModeDesc" length="200" />
+        </property>
+        <property name="durationWeeks" type="string">
+            <column name="DurationWeeks" length="100" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="StartDate" length="19" />
+        </property>
+        <property name="esstartDate" type="timestamp">
+            <column name="ESStartDate" length="19" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="EndDate" length="19" />
+        </property>
+        <property name="esendDate" type="timestamp">
+            <column name="ESEndDate" length="19" />
+        </property>
+        <property name="entryCriteria" type="string">
+            <column name="EntryCriteria" length="300" />
+        </property>
+        <property name="acadContactId" type="java.lang.Integer">
+            <column name="AcadContactID" />
+        </property>
+        <property name="acadContactId1" type="java.lang.Integer">
+            <column name="AcadContactID1" />
+        </property>
+        <property name="acadContactId2" type="java.lang.Integer">
+            <column name="AcadContactID2" />
+        </property>
+        <property name="acadContactId3" type="java.lang.Integer">
+            <column name="AcadContactID3" />
+        </property>
+        <property name="applicationUrl" type="string">
+            <column name="ApplicationURL" length="200" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+        <property name="homeFees" type="string">
+            <column name="HomeFees" />
+        </property>
+        <property name="overseasFees" type="string">
+            <column name="OverseasFees" />
+        </property>
+        <property name="siteName" type="string">
+            <column name="SiteName" />
+        </property>
+        <property name="addressId" type="java.lang.Integer">
+            <column name="AddressID" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="Telephone" length="20" />
+        </property>
+        <property name="fax" type="string">
+            <column name="Fax" length="20" />
+        </property>
+        <property name="exams" type="string">
+            <column name="exams" length="100" />
+        </property>
+        <property name="courseWork" type="string">
+            <column name="courseWork" length="100" />
+        </property>
+        <property name="materialFee" type="string">
+            <column name="materialFee" length="100" />
+        </property>
+        <property name="additionalCosts" type="string">
+            <column name="additionalCosts" length="100" />
+        </property>
+        <property name="examFee" type="string">
+            <column name="ExamFee" length="100" />
+        </property>
+        <property name="concessionFees" type="string">
+            <column name="ConcessionFees" length="100" />
+        </property>
+        <property name="fee" type="string">
+            <column name="Fee" length="100" />
+        </property>
+        <property name="details" type="string">
+            <column name="Details" length="1000" />
+        </property>
+        <property name="ucascode" type="string">
+            <column name="UCASCode" length="200" />
+        </property>
+        <property name="ucascodeB" type="string">
+            <column name="UCASCodeB" length="200" />
+        </property>
+        <property name="internationalEntryCriteria" type="string">
+            <column name="InternationalEntryCriteria" length="1000" />
+        </property>
+        <property name="interview" type="string">
+            <column name="Interview" length="1000" />
+        </property>
+        <property name="feeId" type="java.lang.Integer">
+            <column name="FeeID" />
+        </property>
+        <property name="homeFees2" type="string">
+            <column name="HomeFees2" />
+        </property>
+        <property name="overseasFees2" type="string">
+            <column name="OverseasFees2" />
+        </property>
+        <property name="durationNotes" type="string">
+            <column name="DurationNotes" />
+        </property>
+        <property name="dayTaught" type="string">
+            <column name="DayTaught" />
+        </property>
+        <property name="timeTaught" type="string">
+            <column name="TimeTaught" />
+        </property>
+        <property name="intExamFees" type="string">
+            <column name="IntExamFees" />
+        </property>
+        <property name="feeNotes" type="string">
+            <column name="FeeNotes" />
+        </property>
+        <property name="workExperience" type="string">
+            <column name="workExperience" />
+        </property>
+        <property name="extraStudy" type="string">
+            <column name="extraStudy" />
+        </property>
+        <property name="entrySkills" type="string">
+            <column name="entrySkills" />
+        </property>
+        <property name="studentSupport" type="string">
+            <column name="studentSupport" />
+        </property>
+    </class>
+</hibernate-mapping>

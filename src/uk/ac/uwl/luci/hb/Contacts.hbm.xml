@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2012 6:53:15 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="uk.ac.uwl.luci.hb.Contacts" table="Contacts" catalog="dbo">
+        <id name="contactId" type="int">
+            <column name="ContactID" />
+            <generator class="assigned" />
+        </id>
+        <property name="contactName" type="string">
+            <column name="ContactName" length="200" />
+        </property>
+        <property name="contactTel" type="string">
+            <column name="ContactTel" length="50" />
+        </property>
+        <property name="contactEmail" type="string">
+            <column name="ContactEmail" length="200" />
+        </property>
+        <property name="contactAddress" type="string">
+            <column name="ContactAddress" length="65535" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 9, 2012 6:53:15 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="uk.ac.uwl.luci.hb.Address" table="Address" catalog="dbo">
+        <id name="addressId" type="int">
+            <column name="AddressID" />
+            <generator class="assigned" />
+        </id>
+        <property name="addressName" type="string">
+            <column name="AddressName" length="100" />
+        </property>
+        <property name="address1" type="string">
+            <column name="Address1" length="200" />
+        </property>
+        <property name="address2" type="string">
+            <column name="Address2" length="200" />
+        </property>
+        <property name="address3" type="string">
+            <column name="Address3" length="200" />
+        </property>
+        <property name="address4" type="string">
+            <column name="Address4" length="200" />
+        </property>
+        <property name="postcode" type="string">
+            <column name="Postcode" length="50" />
+        </property>
+        <property name="directionsUrl" type="string">
+            <column name="DirectionsURL" length="200" />
+        </property>
+        <property name="mapUrl" type="string">
+            <column name="MapURL" length="200" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+        <property name="esid" type="string">
+            <column name="ESID" length="50" />
+        </property>
+        <property name="rsid" type="string">
+            <column name="RSID" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
