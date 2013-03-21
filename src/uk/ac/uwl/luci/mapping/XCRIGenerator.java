@@ -11,7 +11,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.*;
 import org.apache.xmlbeans.XmlOptions;
+import org.purl.dc.elements.x11.DescriptionDType;
+import org.purl.net.mlo.PrerequisiteDType;
 import org.xcri.profiles.x12.catalog.CatalogDocument;
+import org.xcri.profiles.x12.catalog.CourseDType;
+import org.xcri.profiles.x12.catalog.PresentationDType;
 import uk.ac.uwl.luci.rdf.course.XcriRDFGenerator;
 
 // Referenced classes of package uk.ac.uwl.luci.mapping:
@@ -152,6 +156,25 @@ public class XCRIGenerator extends TimerTask
                 if(prop.getProperty("rdf.generate").equals("true")){               
                     new XcriRDFGenerator().buildRdf(targetFolder,cat);
                 }
+                
+                //Temp debugging code.. 
+                /*
+                CourseDType[] courses = cat.getCatalog().getProviderArray(0).getCourseArray();
+                for(CourseDType course : courses){
+                    PrerequisiteDType[] prerequisites = course.getPrerequisiteArray();
+                    for(PrerequisiteDType prerequisite : prerequisites){
+                        if(prerequisite.xmlText().length()>4000)
+                            System.out.println("===========> Prerequisite!!");
+                    }
+                    PresentationDType[] presentations = course.getPresentationArray();
+                    for(PresentationDType presentation : presentations){
+                        DescriptionDType[] descriptions = presentation.getDescriptionArray();
+                        for(DescriptionDType description : descriptions){
+                            if(description.xmlText().length()>4276)
+                            System.out.println("===========> description!![" +description.xmlText().length()+"]"+ description.xmlText());
+                        }
+                    }
+                }*/
 
             }
             else{

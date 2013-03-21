@@ -94,7 +94,8 @@ public class JobRDFGenerator extends RDFGenerator
         
         try{
             JobRDFGenerator rdfGenerator = new JobRDFGenerator();
-            rdfGenerator.filepath = "/srv/www/htdocs/job_rdf/";
+            //rdfGenerator.filepath = "/srv/www/htdocs/job_rdf/";
+            rdfGenerator.filepath = "./";
             File file = new File((new StringBuilder()).append(rdfGenerator.filepath).append("recent_job.rdf").toString());
             fout = new FileOutputStream(file);
             rdfGenerator.setJobList((new TwitterReader()).readTweet());

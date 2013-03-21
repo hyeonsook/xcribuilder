@@ -1,0 +1,28 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:job="http://luci.uwl.ac.uk/job_linkeddata/" > 
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:subject rdf:resource="http://luci.uwl.ac.uk/course_linkeddata#provenance"/>
+    <rdf:predicate rdf:resource="http://purl.org/dc/elements/1.1/publisher"/>
+    <rdf:object>University of West London</rdf:object>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:subject rdf:resource="http://luci.uwl.ac.uk/course_linkeddata#provenance"/>
+    <rdf:predicate rdf:resource="http://purl.org/dc/elements/1.1/rights"/>
+    <rdf:object>http://reference.data.gov.uk/id/open-government-licence</rdf:object>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:subject rdf:resource="http://luci.uwl.ac.uk/course_linkeddata#provenance"/>
+    <rdf:predicate rdf:resource="http://luci.uwl.ac.uk/course_linkeddata/source"/>
+    <rdf:object>http://twitter.com/GraduateJobFeed</rdf:object>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:subject rdf:resource="http://luci.uwl.ac.uk/course_linkeddata#provenance"/>
+    <rdf:predicate rdf:resource="http://purl.org/dc/elements/1.1/issued"/>
+    <rdf:object>2013-03-20</rdf:object>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+</rdf:RDF>

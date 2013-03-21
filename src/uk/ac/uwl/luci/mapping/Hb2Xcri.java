@@ -197,26 +197,29 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getIntroduction());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getIntroduction()));
             description.set(descValue);
             
         }
  //--> changes with existing fields and new ones based on request from Lucy, 27 Nov 2012
-        DescriptionDType pdescription = xcriCourse.addNewDescription();
-        XmlCursor pdescCursor = pdescription.newCursor();
+        
         Boolean hasValidation = false;
         if(isValidRecord(hbCourse.getValidation()))
         {
+            DescriptionDType pdescription = xcriCourse.addNewDescription();
+            XmlCursor pdescCursor = pdescription.newCursor();
             pdescCursor.toFirstContentToken();
             pdescCursor.insertAttributeWithValue(new QName("http://www.w3.org/2001/XMLSchema-instance", "type"), "xcriterms:policy");
             pdescCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
             pdescCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
             pdescCursor.insertAttributeWithValue("class", "validation");
-            pdescCursor.insertChars(hbCourse.getValidation());
+            pdescCursor.insertChars(DataCleaner.getFirst4000Chars(hbCourse.getValidation()));
             hasValidation = true;
         }
-        
+  /*      
         if(isValidRecord(hbCourse.getWebPageURL())){
+            DescriptionDType pdescription = xcriCourse.addNewDescription();
+            XmlCursor pdescCursor = pdescription.newCursor();
             if(!hasValidation){
                 pdescCursor.toFirstContentToken();
                 pdescCursor.insertAttributeWithValue(new QName("http://www.w3.org/2001/XMLSchema-instance", "type"), "xcriterms:policy");
@@ -239,7 +242,7 @@ public class Hb2Xcri {
 
              pdescCursor.dispose();
         }
-            
+       */     
 
  // <-- changes
         
@@ -247,7 +250,7 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getNotableAspects());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getNotableAspects()));
             description.set(descValue);
             XmlCursor descCursor = description.newCursor();
             descCursor.toFirstContentToken();
@@ -257,7 +260,7 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getSpecialResources());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getSpecialResources()));
             description.set(descValue);
             XmlCursor descCursor = description.newCursor();
             descCursor.toFirstContentToken();
@@ -267,7 +270,7 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getTeachingMethods());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getTeachingMethods()));
             description.set(descValue);
             XmlCursor descCursor = description.newCursor();
             descCursor.toFirstContentToken();
@@ -277,7 +280,7 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getLearningMaterials());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getLearningMaterials()));
             description.set(descValue);
             XmlCursor descCursor = description.newCursor();
             descCursor.toFirstContentToken();
@@ -287,7 +290,7 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getCareerProgression());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getCareerProgression()));
             description.set(descValue);
             XmlCursor descCursor = description.newCursor();
             descCursor.toFirstContentToken();
@@ -297,7 +300,7 @@ public class Hb2Xcri {
         {
             DescriptionDType description = xcriCourse.addNewDescription();
             XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValue.setStringValue(hbCourse.getStudyProgression());
+            descValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getStudyProgression()));
             description.set(descValue);
             XmlCursor descCursor = description.newCursor();
             descCursor.toFirstContentToken();
@@ -342,7 +345,7 @@ public class Hb2Xcri {
             {
                 org.purl.dc.elements.x11.SubjectDType subject = xcriCourse.addNewSubject();
                 XmlString subjValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-                subjValue.setStringValue(subjectString);
+                subjValue.setStringValue(DataCleaner.cleanSubject(subjectString));
                 subject.set(subjValue);
             }
         }
@@ -353,7 +356,7 @@ public class Hb2Xcri {
             {
                 org.purl.dc.elements.x11.SubjectDType subject = xcriCourse.addNewSubject();
                 XmlString subjValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-                subjValue.setStringValue(subjectString);
+                subjValue.setStringValue(DataCleaner.cleanSubject(subjectString));
                 subject.set(subjValue);
             }
         }
@@ -364,7 +367,7 @@ public class Hb2Xcri {
             {
                 org.purl.dc.elements.x11.SubjectDType subject = xcriCourse.addNewSubject();
                 XmlString subjValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-                subjValue.setStringValue(subjectString);
+                subjValue.setStringValue(DataCleaner.cleanSubject(subjectString));
                 subject.set(subjValue);
             }
         }
@@ -389,7 +392,7 @@ public class Hb2Xcri {
         {
             org.xcri.profiles.x12.catalog.DescriptionDType lo = xcriCourse.addNewLearningOutcome();
             XmlString loValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            loValue.setStringValue(hbCourse.getExitSkills());
+            loValue.setStringValue(DataCleaner.getFirst4000Chars(hbCourse.getExitSkills()));
             lo.set(loValue);
         }
         QualificationDType qualification = xcriCourse.addNewQualification();
@@ -465,14 +468,14 @@ public class Hb2Xcri {
             
             org.xcri.profiles.x12.catalog.DescriptionDType application = xcriInstance.addNewApplicationProcedure();
             XmlString applicationValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            applicationValue.setStringValue("");
+            applicationValue.setStringValue(prop.getProperty("course.application.url"));
             application.set(applicationValue);
             
         } else
         {
             String educationLevel = hbCourse.getStudyLevel();
             String startYear = null;
-            String applicationText = "";
+            String applicationText = prop.getProperty("course.application.url");
             if(isValidRecord(educationLevel)){
                 educationLevel = getEducationLevel(educationLevel);
                 
@@ -548,16 +551,20 @@ public class Hb2Xcri {
             amCursor.toFirstContentToken();
             amCursor.insertAttributeWithValue("identifier", getAttendanceModeId(hbInstance.getStudyModeDesc()));
             amCursor.insertChars(getAttendanceModeDesc(hbInstance.getStudyModeDesc()));
+            
             VocabularyDType attendancePattern = xcriInstance.addNewAttendancePattern();
             XmlCursor apCursor = attendancePattern.newCursor();
             apCursor.toFirstContentToken();
             apCursor.insertAttributeWithValue("identifier", getAttendancePatternId(hbInstance.getStudyModeDesc()));
             apCursor.insertChars(getAttendancePatternDesc(hbInstance.getStudyModeDesc()));
+            
             VocabularyDType studyMode = xcriInstance.addNewStudyMode();
             XmlCursor smCursor = studyMode.newCursor();
             smCursor.toFirstContentToken();
             smCursor.insertAttributeWithValue("identifier", getStudyModeId(hbInstance.getStudyModeDesc()));
             smCursor.insertChars(getStudyModeDescription(hbInstance.getStudyModeDesc()));
+            
+            
         }
         String costString = getCostDescription(hbInstance);
         if(!costString.trim().equals(""))
@@ -581,11 +588,13 @@ public class Hb2Xcri {
         XmlString idValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
         idValue.setStringValue((new StringBuilder()).append(prop.getProperty("presentation.url.prefix")).append(hbInstance.getCourseInstanceId()).toString());
         id.set(idValue);
+        
+        
         if(isValidRecord(hbInstance.getUcascode()))
         {
             id = xcriInstance.addNewIdentifier();
             idValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            idValue.setStringValue(hbInstance.getUcascode());
+            idValue.setStringValue(DataCleaner.cleanUcasCode(hbInstance.getUcascode()));
             id.set(idValue);
             XmlCursor idCursor = id.newCursor();
             idCursor.toFirstContentToken();
@@ -663,7 +672,8 @@ public class Hb2Xcri {
                 preqCursor.insertAttributeWithValue("class", "entryCriteria");
                 String tmpEntryCriteria = "";
                 if(isValidRecord(hbInstance.getEntryCriteria())){
-                    tmpEntryCriteria = hbInstance.getEntryCriteria();
+                    // 26 Feb 2013, Hyeonsook, Modification - Added string of <br/><br/> between two entrycriteria data.
+                    tmpEntryCriteria = hbInstance.getEntryCriteria()+"<br/><br/>";
                 }
                 if(isValidRecord(hbInstance.getInternationalEntryCriteria())){
                     tmpEntryCriteria += hbInstance.getInternationalEntryCriteria();
@@ -699,6 +709,10 @@ public class Hb2Xcri {
                 hasParent = true;
             }
             preqCursor.dispose();
+            
+          
+if(prerequisite.xmlText().length()>4000)
+System.out.println("=================> Prerequisite more than 4000"+ prerequisite.xmlText());                
         }
         
         //-- changes
@@ -737,7 +751,7 @@ public class Hb2Xcri {
             descCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
             descCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
             descCursor.insertAttributeWithValue("class", "durationNotes");
-            descCursor.insertChars(hbInstance.getDurationNotes());
+            descCursor.insertChars(DataCleaner.getFirst4000Chars(hbInstance.getDurationNotes()));
         }
         boolean bDayTaught = false;
         if(isValidRecord(hbInstance.getDayTaught()))
@@ -757,7 +771,7 @@ public class Hb2Xcri {
             descCursor.insertAttributeWithValue("class", "teachingDetails");
             descCursor.beginElement("span", "http://www.w3.org/1999/xhtml");
             descCursor.insertAttributeWithValue("class", "dayTaught");
-            descCursor.insertChars(hbInstance.getDayTaught());
+            descCursor.insertChars(DataCleaner.getFirst4000Chars(hbInstance.getDayTaught()));
         }
         if(isValidRecord(hbInstance.getTimeTaught()))
         {
@@ -783,7 +797,7 @@ public class Hb2Xcri {
             }
             descCursor.beginElement("span", "http://www.w3.org/1999/xhtml");
             descCursor.insertAttributeWithValue("class", "timeTaught");
-            descCursor.insertChars(hbInstance.getTimeTaught());
+            descCursor.insertChars(DataCleaner.getFirst4000Chars(hbInstance.getTimeTaught()));
         }
         //--> changes with existing fields and new ones based on request from Lucy, 27 Nov 2012
         if(isValidRecord(hbInstance.getWorkExperience())){
@@ -802,10 +816,10 @@ public class Hb2Xcri {
             }
             descCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
             descCursor.insertAttributeWithValue("class", "workExperience");
-            descCursor.insertChars(hbInstance.getWorkExperience());
+            descCursor.insertChars(DataCleaner.getFirst4000Chars(hbInstance.getWorkExperience()));
         }
         //-- changes
-        
+        /*
         if(isValidRecord(hbCourse.getSimilarCourses()))
         {
             if(description == null)
@@ -824,6 +838,31 @@ public class Hb2Xcri {
             descCursor.insertAttributeWithValue("class", "relatedCourses");
             descCursor.insertChars(hbCourse.getSimilarCourses());
         }
+        */
+        
+        //--
+        // 26 Feb 2013, Hyeonsook, Modification - Added 
+        if(isValidRecord(hbInstance.getStudyModeDesc()))
+        {
+            if(description == null)
+            {
+                description = xcriInstance.addNewDescription();
+                descCursor = description.newCursor();
+                descCursor.toFirstContentToken();
+                descCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
+            } else
+            {
+                descCursor = description.newCursor();
+                descCursor.toFirstChild();
+                descCursor.toNextToken();
+                
+            }
+            descCursor.beginElement("div", "http://www.w3.org/1999/xhtml");
+            descCursor.insertAttributeWithValue("class", "studyMode");
+            descCursor.insertChars(DataCleaner.getFirst4000Chars(hbInstance.getStudyModeDesc()));
+        }
+        //--
+        
         boolean bFeeDiv = false;
         String strHomeFees = null;
         String strOverseasFees = null;
@@ -874,7 +913,7 @@ public class Hb2Xcri {
         {
             DescriptionDType descriptionDetails = xcriInstance.addNewDescription();
             XmlString descValueDetails = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValueDetails.setStringValue(hbInstance.getDetails());
+            descValueDetails.setStringValue(DataCleaner.getFirst4000Chars(hbInstance.getDetails()));
             descriptionDetails.set(descValueDetails);
             XmlCursor descCursorDetails = descriptionDetails.newCursor();
             descCursorDetails.toFirstContentToken();
@@ -884,7 +923,7 @@ public class Hb2Xcri {
         {
             DescriptionDType descriptionDetails = xcriInstance.addNewDescription();
             XmlString descValueDetails = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValueDetails.setStringValue(hbInstance.getExtraStudy());
+            descValueDetails.setStringValue(DataCleaner.getFirst4000Chars(hbInstance.getExtraStudy()));
             descriptionDetails.set(descValueDetails);
             XmlCursor descCursorDetails = descriptionDetails.newCursor();
             descCursorDetails.toFirstContentToken();
@@ -894,7 +933,7 @@ public class Hb2Xcri {
         {
             DescriptionDType descriptionDetails = xcriInstance.addNewDescription();
             XmlString descValueDetails = org.apache.xmlbeans.XmlString.Factory.newInstance();
-            descValueDetails.setStringValue(hbInstance.getStudentSupport());
+            descValueDetails.setStringValue(DataCleaner.getFirst4000Chars(hbInstance.getStudentSupport()));
             descriptionDetails.set(descValueDetails);
             XmlCursor descCursorDetails = descriptionDetails.newCursor();
             descCursorDetails.toFirstContentToken();
@@ -952,7 +991,11 @@ public class Hb2Xcri {
         ProviderDType provider = venue.addNewProvider();
         DescriptionDType description = provider.addNewDescription();
         XmlString descValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
-        descValue.setStringValue(hbCourse.getDname());
+        if(isValidRecord(hbCourse.getDname())){
+            descValue.setStringValue(hbCourse.getDname());
+        }else{
+            descValue.setStringValue(prop.getProperty("novalue.string"));
+        }
         description.set(descValue);
         SimpleLiteral pId = provider.addNewIdentifier();
         XmlString pValue = org.apache.xmlbeans.XmlString.Factory.newInstance();
@@ -964,6 +1007,7 @@ public class Hb2Xcri {
             if(hbInstance.getAddressId() == null)
             {
                 location.addAddress(prop.getProperty("location1.address"));
+
                 location.setPostcode(prop.getProperty("location1.postcode"));
                 location.setEmail(prop.getProperty("location1.email"));
                 location.setFax(prop.getProperty("location1.fax"));
@@ -975,18 +1019,26 @@ public class Hb2Xcri {
                 if(address == null){
                     System.out.println("-------COId:"+hbInstance.getCourseInstanceId());
                 }
-                    
-                if(address.getAddress1() != null)
+                
+                boolean hasAddress = false;
+                if(isValidRecord(address.getAddress1())){
                     location.addAddress(address.getAddress1());
-                if(address.getAddress2() != null)
+                    hasAddress = true;
+                }
+                if(isValidRecord(address.getAddress2())){
                     location.addAddress(address.getAddress2());
-                if(address.getAddress3() != null)
-                    if(address.getAddress3().trim().equals(""));
-                location.addAddress(address.getAddress3());
-                if(address.getAddress1() == null && address.getAddress2() == null && address.getAddress3() == null)
+                    hasAddress = true;
+                }
+                if(isValidRecord(address.getAddress3())){
+                    location.addAddress(address.getAddress3());
+                    hasAddress = true;
+                }
+                if(!hasAddress){
                     location.addAddress(prop.getProperty("novalue.string"));
+                }
+                
                 if(isValidRecord(address.getPostcode()))
-                    location.setPostcode(address.getPostcode());
+                    location.setPostcode(DataCleaner.cleanPostCode(address.getPostcode()));
                 else
                     location.setPostcode(prop.getProperty("location1.postcode"));
                 if(hbInstance.getAcadContactId() != null)
@@ -1076,7 +1128,6 @@ public class Hb2Xcri {
         
     }
 
-
     private String getDurationIntervalCode(String durationWeeks)
     {
         int days = 0;
@@ -1119,7 +1170,7 @@ public class Hb2Xcri {
                 tmpCode = durationWeeks.substring(beginIndex, endIndex - 1);
                 tmpCode.trim();
                 if(tmpCode.indexOf("-") != -1)
-                    tmpCode = tmpCode.substring(tmpCode.indexOf("-"));
+                    tmpCode = tmpCode.substring(tmpCode.indexOf("-")+1);
                 days += (new Integer(tmpCode)).intValue() * 7;
             }
             endIndex = durationWeeks.indexOf("day");

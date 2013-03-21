@@ -32,7 +32,7 @@ public class CourseHelper {
          
             org.hibernate.Transaction tx = session.beginTransaction();
             Query q = session.createQuery("from XcriCourse ");
-            //Query q = session.createQuery("from XcriCourse as co where co.clusterTitle like 'Acting%'");
+            //Query q = session.createQuery("from XcriCourse as co where co.clusterTitle like 'Music%'");
             
             coList = (List<XcriCourse>) q.list();
             Logger.getLogger(XCRIGenerator.class.getName()).log(Level.INFO, (new StringBuilder()).append("***** Total Courses from DB: ").append(coList.size()).toString());
@@ -150,4 +150,5 @@ public class CourseHelper {
         return eList;
         
     }
+   
 }

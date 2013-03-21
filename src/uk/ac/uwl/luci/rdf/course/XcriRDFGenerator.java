@@ -67,9 +67,23 @@ public class XcriRDFGenerator extends RDFGenerator
             try
             {
                 Resource course = rootModel.createResource(getURI("http://luci.uwl.ac.uk/course_linkeddata/Course#", DocumentHelper.parseText(courses[i].getIdentifierArray(0).toString()).getRootElement().getStringValue().substring(DocumentHelper.parseText(courses[i].getIdentifierArray(0).toString()).getRootElement().getStringValue().lastIndexOf("/") + 1)));
-                course.addProperty(RDF.type, rootModel.createResource("http://luci.uwl.ac.uk/course_linkeddata/Course")).addProperty(rootModel.createProperty("http://purl.org/dc/elements/1.1/", "title"), DocumentHelper.parseText(courses[i].getTitleArray(0).toString()).getRootElement().getStringValue()).addProperty(rootModel.createProperty("http://purl.org/dc/elements/1.1/", "description"), DocumentHelper.parseText(courses[i].getDescriptionArray(0).toString()).getRootElement().getStringValue()).addProperty(rootModel.createProperty("http://luci.uwl.ac.uk/course_linkeddata/", "abstract"), DocumentHelper.parseText(courses[i].getAbstractArray(0).toString()).getRootElement().getStringValue()).addProperty(rootModel.createProperty("http://purl.org/dc/elements/1.1/", "subject"), DocumentHelper.parseText(courses[i].getSubjectArray(0).toString()).getRootElement().getStringValue()).addProperty(rootModel.createProperty("http://luci.uwl.ac.uk/course_linkeddata/", "applicationProcedure"), DocumentHelper.parseText(courses[i].getApplicationProcedureArray(0).toString()).getRootElement().getStringValue());
-                if(courses[i].sizeOfLearningOutcomeArray() > 0)
+                course.addProperty(RDF.type, rootModel.createResource("http://luci.uwl.ac.uk/course_linkeddata/Course"))
+                        .addProperty(rootModel.createProperty("http://purl.org/dc/elements/1.1/", "title"), DocumentHelper.parseText(courses[i].getTitleArray(0).toString()).getRootElement().getStringValue())
+                        .addProperty(rootModel.createProperty("http://purl.org/dc/elements/1.1/", "description"), DocumentHelper.parseText(courses[i].getDescriptionArray(0).toString()).getRootElement().getStringValue())
+                        .addProperty(rootModel.createProperty("http://luci.uwl.ac.uk/course_linkeddata/", "abstract"), DocumentHelper.parseText(courses[i].getAbstractArray(0).toString()).getRootElement().getStringValue())
+                        .addProperty(rootModel.createProperty("http://purl.org/dc/elements/1.1/", "subject"), DocumentHelper.parseText(courses[i].getSubjectArray(0).toString()).getRootElement().getStringValue())
+                        .addProperty(rootModel.createProperty("http://luci.uwl.ac.uk/course_linkeddata/", "applicationProcedure"), DocumentHelper.parseText(courses[i].getApplicationProcedureArray(0).toString()).getRootElement().getStringValue());
+                
+                if(courses[i].sizeOfLearningOutcomeArray() > 0){
                     course.addProperty(rootModel.createProperty("http://luci.uwl.ac.uk/course_linkeddata/", "learningOutcome"), DocumentHelper.parseText(courses[i].getLearningOutcomeArray(0).toString()).getRootElement().getStringValue());
+                 }
+                
+                for(int j=0; j < courses[i].getDescriptionArray().length; j++){
+                        if(courses[i].getDescriptionArray(j).toString().contains("xcriterms:topic"))
+                            course.addProperty(rootModel.createProperty("http://luci.uwl.ac.uk/course_linkeddata/", "topics"), DocumentHelper.parseText(courses[i].getDescriptionArray(j).toString()).getRootElement().getStringValue());
+                
+                    }
+                
                 if(courses[i].sizeOfQualificationArray() > 0)
                 {
                     qualification = rootModel.createResource(getURI("http://luci.uwl.ac.uk/course_linkeddata/Qualification#", DocumentHelper.parseText(courses[i].getQualificationArray(0).getIdentifierArray(0).toString()).getRootElement().getStringValue().substring(DocumentHelper.parseText(courses[i].getQualificationArray(0).getIdentifierArray(0).toString()).getRootElement().getStringValue().lastIndexOf("/") + 1)));
