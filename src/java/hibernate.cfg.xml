@@ -9,20 +9,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dbo</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password"/>-->
-    
-    <!-- Marketing DB MS SQL connection (Current CID) -->
-    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://89.234.40.139;databaseName=TVU_30_07</property>
-    <property name="hibernate.connection.username">xcritest</property>
-    <property name="hibernate.connection.password">Luci360</property>
-    
-    
-    <!-- New Markteing DB 
-    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://172.31.2.21;databaseName=TVU_30_07</property>
-    <property name="hibernate.connection.username">xcrilive</property>
-    <property name="hibernate.connection.password">dvTC3eSf</property>
-    -->
+  
      <!-- Use the C3P0 connection pool provider -->
     <property name="hibernate.c3p0.min_size">1</property>     
     <property name="hibernate.c3p0.max_size">3</property>     
